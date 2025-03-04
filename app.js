@@ -3,8 +3,8 @@
 
 let secretNumber = 0;
 let counter = 0;
-let usedNumbers = []
-let maxNumber = 5
+let usedNumbers = [];
+let maxNumber = parseInt(prompt("Number Please"));
 
 
 //Defines function that assigns text to HTML elements
@@ -19,7 +19,7 @@ function userAttempt(){
        userNumbers = parseInt(document.getElementById('userNumber').value);
    
        if(userNumbers === secretNumber){
-           assignTextToElement('p',`Good job!, you guessed the number. In ${counter} ${counter === 1 ? 'attempt':'attempts'}`);
+           assignTextToElement('p',`Good job!, you guessed the number. After ${counter} ${counter === 1 ? 'attempt':'attempts'}`);
            document.getElementById('reiniciar').removeAttribute('disabled')
         } else {
         // The user did not guesses the number
@@ -64,18 +64,18 @@ function initConditions(){
       //Assigning text to HTML elements.
       assignTextToElement('p',`choose a number between 1 and ${maxNumber}`);
       assignTextToElement('h1','Welcome to the guess a number game!');
-      secretNumber = secretNumberGeneration()
-      counter = 1
+      secretNumber = secretNumberGeneration();
+      counter = 1;
 }
 function restartGame(){
          // Clear box
-         clearNumberBox()
+         clearNumberBox();
          // Set Initial conditions
-         initConditions()
+         initConditions();
          //Disable restart button
-         document.querySelector('#reiniciar').setAttribute('disabled','true')
+         document.querySelector('#reiniciar').setAttribute('disabled','true');
 }
 
 initConditions();
-console.log(secretNumber)
-console.log(counter)
+console.log(secretNumber);
+console.log(counter);
