@@ -46,6 +46,7 @@ function secretNumberGeneration(){
    //Check if the list already reached the max len
    if(usedNumbers.length===maxNumber){
       assignTextToElement('p','All posible numbers have already been used =)');
+      setTimeout(function(){location.reload();},5000);
    }else{
            //Genate a list of number used during the game to prevent repetition
        if(usedNumbers.includes(ranNum)){
